@@ -2,11 +2,13 @@
   <header>
     <nav>
       <ul>
+
         <li>
-          <button @click="setActivePage('teams-list')">Teams</button>
+<!--          <button @click="setActivePage('users-list')">Players</button>-->
+          <router-link to="/teams">Teams</router-link>
         </li>
         <li>
-          <button @click="setActivePage('users-list')">Players</button>
+          <RouterLink to="/players">Players</RouterLink>
         </li>
       </ul>
       <div class="user-info">
@@ -16,16 +18,16 @@
   </header>
 </template>
 
-<script>
-export default {
-  emits: ['set-page'],
-  methods: {
-    setActivePage(page) {
-      this.$emit('set-page', page);
-    },
-  },
-};
-</script>
+<!--<script>-->
+<!--export default {-->
+<!--  emits: ['set-page'],-->
+<!--  methods: {-->
+<!--    setActivePage(page) {-->
+<!--      this.$emit('set-page', page);-->
+<!--    },-->
+<!--  },-->
+<!--};-->
+<!--</script>-->
 
 <style scoped>
 header {
@@ -60,8 +62,9 @@ li {
 
 }
 
-button {
-  font: inherit;
+a  {
+  /*font: inherit;*/
+  text-decoration: none;
   background: transparent;
   border: 1px solid #ec0202;
   cursor: pointer;
@@ -72,8 +75,9 @@ button {
 
 }
 
-button:hover,
-button:active {
+a:hover,
+a:active ,
+a.router-link-active {
   color: #f1a80a;
   border-color: #f1a80a;
   background-color: #1a037e;

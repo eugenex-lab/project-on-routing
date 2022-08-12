@@ -70,9 +70,11 @@ export default {
 li {
   margin: 0.2rem 0;
   height: 330px;
-  width: 420px;
+  width: 410px;
   border: 1px solid #ccc;
   padding: 1rem;
+  /*// remove bullets from list items*/
+  list-style: none;
 }
 
 

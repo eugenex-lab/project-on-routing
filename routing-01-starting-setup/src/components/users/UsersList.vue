@@ -1,7 +1,9 @@
 <template>
+  <button @click="confirmConfam">Players</button>
   <ul>
-    <user-item v-for="user in users" :key="user.id" :name="user.fullName" :image="user.image" :jerseyNumber="user.jerseyNumber" :role="user.role"
-    :app="user.app" :goals="user.goals" :nationality="user.nationality"
+    <user-item v-for="user in users" :key="user.id" :name="user.fullName" :image="user.image"
+               :jerseyNumber="user.jerseyNumber" :role="user.role"
+               :app="user.app" :goals="user.goals" :nationality="user.nationality"
     ></user-item>
   </ul>
 </template>
@@ -14,6 +16,11 @@ export default {
     UserItem,
   },
   inject: ['users'],
+  methods:{
+    confirmConfam(){
+      this.$router.push('/team');
+    }
+  }
 };
 </script>
 
